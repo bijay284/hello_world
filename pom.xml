@@ -14,14 +14,32 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
-<distributionManagement>
+  <repositories>
+    <repository>
+      <id>maven-group</id>
+      <url>http://3.17.205.237:8081/#admin/repository/repositories:maven-group/</url>
+    </repository>
+  </repositories>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://3.17.205.237:8081/#admin/repository/repositories:maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://3.17.205.237:8081/#admin/repository/repositories:maven-releases/</url>
+    </repository>
+  <!-- For local repo
+   | To add local maven repo below tag should be used
+   
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
          <url>file:///var/lib/jenkins/maven_repo_artifact/</url>
        </repository>
-   </distributionManagement>
-
+    -->   
+  </distributionManagement>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
